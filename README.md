@@ -72,16 +72,6 @@ Jika aplikasi sepenuhnya berbasis form submission, cukup dokumentasikan alur for
 
 ![Diagram Arsitektur](backend/diagram_arsitektur_pw.png)
 
-Browser (User/Admin) 
-| 
-v 
-PHP Frontend/Form ––> PHP Backend Logic ––> MySQL Database 
-^  | 
-Session/Cookie    |  | Query 
-|  v 
-Dashboard/Daftar
-
-
 ---
 
 ## ERD (Entity Relationship Diagram)
