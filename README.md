@@ -69,6 +69,9 @@ Jika aplikasi sepenuhnya berbasis form submission, cukup dokumentasikan alur for
 - **Database:** MySQL (tabel: kelas, pendaftaran, admin)
 
 ### Diagram Arsitektur
+
+![Alt text](backend/diagram arsitektur_pw.png)
+
 Browser (User/Admin) 
 | 
 v 
