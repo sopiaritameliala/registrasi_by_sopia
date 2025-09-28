@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #ffffff; /* Putih */
+  color: #333;
+}
+
+h2 {
+  color: #cc3366; /* Pink tua */
+}
+
+form {
+  background: #fce4ec; /* Pink muda sangat soft */
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(204, 51, 102, 0.3); /* Bayangan pink */
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 8px 0 15px 0;
+  border: 1px solid #cc3366; /* Border pink */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #3366cc; /* Biru */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #254a99; /* Biru gelap */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #ffffff; /* Putih */
+}
+
+table th,
+table td {
+  border: 1px solid #cc3366; /* Border pink */
+  text-align: left;
+  padding: 10px;
+}
+
+table th {
+  background-color: #3366cc; /* Biru */
+  color: white;
+}
+
+a {
+  color: #cc3366; /* Link berwarna pink */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #993355; /* Pink gelap */
+  text-decoration: underline;
+}
