@@ -70,8 +70,6 @@ Jika aplikasi sepenuhnya berbasis form submission, cukup dokumentasikan alur for
 
 ### Diagram Arsitektur
 
-![Alt text](backend/diagram arsitektur_pw.png)
-
 Browser (User/Admin) 
 | 
 v 
