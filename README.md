@@ -1,16 +1,100 @@
 # registrasi_by_sopia
-Sistem pendaftaran kelas berbasis web dengan fitur kuota real-time dan manajemen peserta
-
-## Deskripsi Proyek
-Aplikasi web sederhana untuk pendaftaran kelas dengan kuota real-time. Siswa dapat melihat daftar kelas, sisa kuota, mendaftar, dan menerima konfirmasi otomatis. Admin dapat mengelola kelas, kuota, dan melihat daftar peserta.
+Aplikasi web untuk pendaftaran kelas bagi siswa dengan kuota real-time, sistem manajemen kelas oleh admin, dan konfirmasi otomatis.
 
 ## Fitur Utama
-- Melihat daftar kelas dan kuota tersisa
-- Pendaftaran kelas oleh siswa
-- Konfirmasi pendaftaran otomatis
-- Admin mengelola kelas dan kuota
-- Admin melihat dan mengedit data pendaftar
-- Penghapusan data pendaftar
+- Siswa dapat melihat daftar kelas & sisa kuota terbaru
+- Siswa dapat mendaftar secara online dan menerima konfirmasi otomatis
+- Admin dapat menambah, mengedit, menghapus kelas dan kuota
+- Statistik dan daftar peserta tampil di dashboard admin
+- Validasi dan keamanan dasar (session login, logout, timeout, validasi input)
+
+## Struktur Folder
+registrasi_by_sopia/
+│   README.md 
+│   index.php 
+│   daftar.php 
+│ 
+├── backend/
+│   ├── koneksi.php
+│   ├── login.php 
+│   ├── daftar.php 
+│   ├── kelas.php 
+│   ├── daftar.php
+│   ├── dashboard_admin.php
+│   ├── edit_kelas.php
+│   ├── edit_pendaftaran.php
+│   ├── hapus_kelas.php
+│   ├── hapus_pendaftaran.php
+│   ├── hash_password.php
+│   ├── kelas_siswa.php
+│   ├── list_pendaftaran.php
+│   ├── login_process.php
+│   ├── logout.php
+│   ├── tambah_kelas.php
+│   ├── update_pendaftaran.php
+├── css/ 
+├── js/
+
+## Cara Install & Menjalankan (Panduan Deploy)
+1. Clone proyek ke folder `htdocs` XAMPP/MAMP/Laragon.
+2. Buat database MySQL, misal: `registrasi_sopia`.
+3. Import file SQL (jika tersedia), atau buat tabel `kelas`, `pendaftaran`, dan `admin` sesuai ERD di bawah.
+4. Edit `backend/koneksi.php` agar cocok dengan user/pass database lokal.
+5. Jalankan `localhost/registrasi_by_sopia/`.
+6. Login admin: akses `backend/login.php` (default: username `admin` / password sesuai hash).
+7. Siswa mendaftar melalui `daftar.php`.
+
+---
+
+### 2. API Spec (bila ada endpoint API—opsional untuk PHP procedural)
+
+Jika aplikasi sepenuhnya berbasis form submission, cukup dokumentasikan alur form:
+- **POST** `/backend/daftar.php`  
+  - Parameter: `nama`, `kelas_id`  
+  - Response: HTML/alert sukses/gagal  
+- **GET** `/index.php`  
+  - Output: Daftar kelas dan sisa kuota
+
+---
+
+### 3. Arsitektur Sistem (deskripsi singkat + diagram)
+
+#### Arsitektur Sederhana
+- **Frontend:** HTML, CSS, sedikit JS, request via form ke backend
+- **Backend:** PHP procedural (koneksi database, validasi input, session management)
+- **Database:** MySQL (tabel: kelas, pendaftaran, admin)
+- **Diagram:**
+
+Browser (User/Admin) 
+| 
+v 
+PHP Frontend/Form ––> PHP Backend Logic ––> MySQL Database 
+^  | 
+Session/Cookie    |  | Query 
+|  v 
+Dashboard/Daftar
+
+- (Bisa menggunakan aplikasi draw.io/digram.net untuk versi gambar.)
+
+---
+
+### 4. ERD (Entity Relationship Diagram)
+
++———————+        +–––––––––––+ 
+|       kelas         |        |     pendaftaran      | 
++———————+        +–––––––––––+ 
+| id (int, PK)        | <––> | id (int, PK)         | 
+| nama (varchar)      |        | nama_siswa (varchar) | 
+| kuota (int)         |        | kelas_id (int, FK)   | 
++———————+        +–––––––––––+ 
+^ 
+|
++—————+ 
+|   admin       | 
++—————+ | id (int, PK)  | 
+| username      | 
+| password_hash | 
++—————+
 
 ## Persyaratan Sistem
 - XAMPP (Apache, MySQL) terbaru
