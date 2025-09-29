@@ -76,21 +76,7 @@ Jika aplikasi sepenuhnya berbasis form submission, cukup dokumentasikan alur for
 
 ## ERD (Entity Relationship Diagram)
 
-+———————+        +–––––––––––+ 
-| kelas |        | pendaftaran | 
-+———————+        +–––––––––––+ 
-|id (int, PK)| <––> |id (int, PK)| 
-|nama (varchar)| | nama_siswa (varchar) | 
-| kuota (int) |   | kelas_id (int, FK)   | 
-+———————+        +–––––––––––+ 
-^ 
-|
-+—————+ 
-| admin | 
-+—————+ | id (int, PK)  | 
-| username      | 
-| password_hash | 
-+—————+
+![ERD (Entity Relationship Diagram)](backend/ERD_registrasi.png)
 
 - "Pendafataran.kelas_id" adalah foreign key ke kelas.id
 
